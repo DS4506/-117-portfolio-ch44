@@ -1,16 +1,48 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/base.css'%}"/>
+    <link rel="stylesheet" href="{% static 'css/header.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/sections.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css'%}"/>
+    <link rel="stylesheet" href="{% static 'css/responsive.css'%}"/>
     <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
-    <h2>Here is my header</h2>
+    <header class="center-row">
+        <!--left Side-->
+        <div class="logo center-row">
+          <a href="">
+            <h2>David Smith</h2>
+          </a>
+        </div>
+  
+        <!--Right Side-->
+        <nav>
+          <!--Hamburger Button-->
+  
+          <!--Menu link options-->
+          <div class="nav-link center-row">
+            <a href="">About Me</a>
+            <a href="{% url 'projects' %}">Projects</a>
+            <a href="">Experince</a>
+            <a href="">Contact</a>
+          </div>
+        </nav>
+      </header>
 
-    {% block container %}
+    {% block content %}
 
-    {% endblock container %}
+    {% endblock content %}
 
     <h2>Here is my footer</h2>
     
